@@ -1,28 +1,15 @@
-const express = require('express');
+import express from "express";
+const app = express();
 
 
+// middleware
+app.use("/user", userRoughter);
 
+app.use("/", (req, res, next) => {
+  return res.send("hi");
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+app.listen(5000, () => console.log("listening to port"));
 
 
 
@@ -65,12 +52,11 @@ const express = require('express');
 //   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 // });
 
-
 // // Create a new instance of an Apollo server with the GraphQL schema
 // const startApolloServer = async (typeDefs, resolvers) => {
 //   await server.start();
 //   server.applyMiddleware({ app });
-  
+
 //   db.once('open', () => {
 //     app.listen(PORT, () => {
 //       console.log(`API server running on port ${PORT}!`);
@@ -78,6 +64,6 @@ const express = require('express');
 //     })
 //   })
 //   };
-  
+
 // // Call the async function to start the server
 //   startApolloServer(typeDefs, resolvers);
