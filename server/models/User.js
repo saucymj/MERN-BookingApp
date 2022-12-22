@@ -22,4 +22,6 @@ const userSchema = new Schema({
   posts: [{ type: String }],
 });
 
-export default model("User", userSchema);
+const User = model('User', userSchema);
+
+module.exports = User;
