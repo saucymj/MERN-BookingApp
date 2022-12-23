@@ -1,6 +1,7 @@
-const { Schema, model } = require("mongoose");
+const mongoose = require('mongoose');
 const dateFormat = require("../utils/dateFormat");
 
+const { Schema } = mongoose;
 
 const blogSchema = new Schema({
   title: {
