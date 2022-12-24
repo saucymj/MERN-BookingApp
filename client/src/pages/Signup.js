@@ -41,7 +41,7 @@ const Signup = () => {
     };
 
     return (
-        <div spacingY='40px' style={{ margin: '14px' }}>
+        <div style={{ margin: '14px' }}>
             <h2>Signup</h2>
             {data ? (
                 <p>
@@ -49,18 +49,24 @@ const Signup = () => {
                     <Link to="/">back to the homepage.</Link>
                 </p>
             ) : (
-                <FormControl isRequired onSubmit={handleFormSubmit}>
+                <form onSubmit={handleFormSubmit}>
+                <FormControl isRequired>
                     <FormLabel>Username</FormLabel>
-                    <Input placeholder='Username' type='text' onChange={handleChange} value={formState.username} />
+                    <Input id='usernamee' placeholder='Username' type='text'  name='username' onChange={handleChange} value={formState.username} />
+                </FormControl>
+                <FormControl isRequired>
                     <FormLabel>Email</FormLabel>
-                    <Input placeholder='Email' type='email' onChange={handleChange} value={formState.email} />
+                    <Input id='email' placeholder='Email' type='email' name='email' onChange={handleChange} value={formState.email} />
+                </FormControl>
+                <FormControl isRequired>
                     <FormLabel>Password</FormLabel>
-                    <Input placeholder='Password' value={formState.password} type='password' onChange={handleChange} />
+                    <Input id='password' placeholder='Password' value={formState.password} name='password' type='password' onChange={handleChange} />
                     <FormHelperText>* is a required field</FormHelperText>
                     <div>
-                        <Button mt={8} colorScheme='blue'>Submit</Button>
+                        <Button mt={8} type='submit' colorScheme='blue'>Submit</Button>
                     </div>
                 </FormControl>
+                </form>
             )}
 
             {error && (
