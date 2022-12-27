@@ -20,6 +20,13 @@ app.use(express.json());
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
 }
+<<<<<<< HEAD:server/app.js
+=======
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
+>>>>>>> 0b7d18c10499f1ad358bed5b7c45cea635aae7c0:server/server.js
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));

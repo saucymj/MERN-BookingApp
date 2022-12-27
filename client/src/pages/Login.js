@@ -50,20 +50,23 @@ const Login = (props) => {
                     <Link to="/">back to the homepage.</Link>
                 </p>
             ) : (
-                <FormControl isRequired onSubmit={handleFormSubmit}>
+                <form onSubmit={handleFormSubmit}>
+                <FormControl isRequired>
                     <FormLabel>Email</FormLabel>
-                    <Input placeholder='Email'  type='email' onChange={handleChange} value={formState.email} />
+                    <Input placeholder='Email' id='email' type='email' name='email' onChange={handleChange} value={formState.email} />
                     <FormLabel>Password</FormLabel>
                     <Input placeholder='Password'
+                        id='password'
                         value={formState.password}
                         type='password'
+                        name='password'
                         onChange={handleChange} />
                     <FormHelperText>* is a required field</FormHelperText>
                     <div>
-                        <Button mt={8} colorScheme='blue'>Submit</Button>
+                        <Button mt={8} type='submit' colorScheme='blue'>Submit</Button>
                     </div>
                 </FormControl>
-
+                </form>
 
             )}
             {error && (
