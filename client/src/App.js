@@ -7,6 +7,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
+import SingleReview from './pages/SingleReview';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -32,7 +33,7 @@ function App() {
     <ChakraProvider>
     <ApolloProvider client={client}>
       <Router>
-        <div className="flex-column justify-flex-start min-100-vh">
+        <div className="">
           <Routes>
               <Route 
                 path="/" 
@@ -46,7 +47,10 @@ function App() {
                 path="/signup" 
                 element={<Signup />} 
               />
-             
+             <Route 
+                path="/reviews/:reviewId" 
+                element={<SingleReview />} 
+              />
           </Routes>
            </div>
       </Router>
