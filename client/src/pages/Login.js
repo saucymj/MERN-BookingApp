@@ -4,8 +4,9 @@ import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
-import { Input, Button } from '@chakra-ui/react';
-import { FormControl, FormLabel, FormHelperText } from '@chakra-ui/react'
+import { EmailIcon } from '@chakra-ui/icons';
+import { Input, Button ,FormControl, FormLabel, FormHelperText, InputLeftAddon, InputGroup } from '@chakra-ui/react';
+
 
 
 
@@ -51,9 +52,13 @@ const Login = (props) => {
                 </p>
             ) : (
                 <form onSubmit={handleFormSubmit}>
+                
                 <FormControl isRequired>
                     <FormLabel>Email</FormLabel>
+                    <InputGroup>
+                        <InputLeftAddon children={<EmailIcon/>} />
                     <Input placeholder='Email' id='email' type='email' name='email' onChange={handleChange} value={formState.email} />
+                    </InputGroup>
                     <FormLabel>Password</FormLabel>
                     <Input placeholder='Password'
                         id='password'
