@@ -1,7 +1,7 @@
-import mongoose from "mongoose";
+const mongoose = require('mongoose');
 const dateFormat = require("../utils/dateFormat");
 
-const Schema = mongoose.Schema
+const { Schema } = mongoose;
 
 const blogSchema = new Schema({
   title: {
@@ -33,6 +33,6 @@ const blogSchema = new Schema({
   ],
 });
 
-const Blog = model('Blog', blogSchema);
+const Blog = model("Blog", blogSchema);
 
 module.exports = Blog;
