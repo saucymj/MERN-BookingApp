@@ -57,14 +57,14 @@ const ReviewForm = () => {
 
   return (
     <div>
-      <h3>Trips & Tips</h3>
+      <h3>How was your trip?</h3>
 
       {Auth.loggedIn() ? (
         <>
           <FormControl onSubmit={handleFormSubmit}>
-            <Textarea value={reviewText} placeholder='Leave a comment...' onChange={handleChange} />
+            <Textarea value={reviewText} placeholder='Share your experience...' onChange={handleChange} />
             <Text mb='8px'> Character Count: {characterCount}/280 
-            {error && <span className="ml-2">{error.message}</span>}</Text>
+            {error && <span className="">{error.message}</span>}</Text>
             <div>
             <Button mt={8} colorScheme='blue' type='submit'><AddIcon /></Button>
             </div>

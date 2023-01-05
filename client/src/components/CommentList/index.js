@@ -9,7 +9,7 @@ const CommentList = ({ comments = [] }) => {
     return (
         <>
             <Text fontSize='3xl' as='u'>Comments</Text>
-            <div className="flex-row my-4">
+            <div className="">
                 {comments &&
                     comments.map((comment) => (
                         <div key={comment._id} className="">
