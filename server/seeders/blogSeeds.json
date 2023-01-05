@@ -1,5 +1,17 @@
 [
     {
-        ""
+        "blogText": "This place is nice",
+        "blogAuthor": "Michle Grauy",
+        "createdAt": "12/24/2022"
+    },
+    {
+        "blogText": "I would not come here because ...",
+        "blogAuthor": "Sree Frank",
+        "createdAt": "11/7/2022"
+    },
+    {
+        "blogText": "Not worth",
+        "blogAuthor": "Jake Roon",
+        "createdAt": "12/2/2022"
     }
 ]
