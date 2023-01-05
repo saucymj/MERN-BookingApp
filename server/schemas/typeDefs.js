@@ -7,6 +7,7 @@ const typeDefs = gql`
     email: String
     password: String
     review: [Review]!
+    blogs: [Blogs]
   }
   type Review {
     _id: ID
@@ -27,6 +28,7 @@ const typeDefs = gql`
   }
   type Query {
     users: [User]
+    blogs: [Blog]
     user(username: String!): User
     reviews(username: String): [Review]
     review(ReviewId: ID!): Review
