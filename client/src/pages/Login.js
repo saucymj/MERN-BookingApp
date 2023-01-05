@@ -7,9 +7,6 @@ import Auth from '../utils/auth';
 import { EmailIcon } from '@chakra-ui/icons';
 import { Input, Button ,FormControl, FormLabel, FormHelperText, InputLeftAddon, InputGroup } from '@chakra-ui/react';
 
-
-
-
 const Login = (props) => {
     const [formState, setFormState] = useState({ email: '', password: '' });
     const [login, { error, data }] = useMutation(LOGIN_USER);
@@ -81,7 +78,6 @@ const Login = (props) => {
             )}
         </div>
     );
->>>>>>> b2835fd514c988ffd66c2851fbb27900d2e67ee4
 };
 
 export default Login;
