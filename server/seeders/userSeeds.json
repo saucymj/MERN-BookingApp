@@ -1,0 +1,32 @@
+{
+    {
+        "name": "Margaret Clithrow",
+        "email": "MClithrow@techfriends.dev",
+        "password": "password01",
+        "blogs":
+    },
+    {
+        "name": "Pearl Devere",
+        "email": "PDevere@techfriends.dev",
+        "password": "password02",
+        "blogs":
+    },
+    {
+        "name": "Mary Titcomb",
+        "email": "MTitcomb@techfriends.dev",
+        "password": "password03",
+        "blogs":
+    },
+    {
+        "name": "Margaret Brown",
+        "email": "MBrown@techfriends.dev",
+        "password": "password04",
+        "blogs":
+    },
+    {
+        "name": "Margaret Cavendish",
+        "email": "MCavendish@techfriends.dev",
+        "password": "password05",
+        "blogs":
+    },
+}
