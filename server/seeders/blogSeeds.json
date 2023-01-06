@@ -1,5 +1,30 @@
 [
     {
+        "blogText": "Beutiful setting but the rooms are small",
+        "blogAuthor": "Margaret Clitherow",
+        "createdAt": "01/01/2018"
+    },
+    {
+        "blogText": "Fun party town",
+        "blogAuthor": "Pearl Devere",
+        "createdAt": "01/01/2018"
+    },
+    {
+        "blogText": "Bring a book and enjoy the peaceful Blue Ridge Mountains",
+        "blogAuthor": "Mary Titcomb",
+        "createdAt": "01/08/2018"
+    },
+    {
+        "blogText": "Staff are mostly useless, and the boat sank!",
+        "blogAuthor": "Margaret Browm",
+        "createdAt": "04/15/1912"
+    },
+    {
+        "blogText": "Had some lovely conversations with the other guest",
+        "blogAuthor": "Margaret Cavendish",
+        "createdAt": "01/2/2018"
+    },
+    {
         "blogText": "This place is nice",
         "blogAuthor": "Michle Grauy",
         "createdAt": "12/24/2022"
