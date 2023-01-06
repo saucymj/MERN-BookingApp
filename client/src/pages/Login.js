@@ -7,9 +7,6 @@ import Auth from '../utils/auth';
 import { EmailIcon } from '@chakra-ui/icons';
 import { Input, Button ,FormControl, FormLabel, FormHelperText, InputLeftAddon, InputGroup } from '@chakra-ui/react';
 
-
-
-
 const Login = (props) => {
     const [formState, setFormState] = useState({ email: '', password: '' });
     const [login, { error, data }] = useMutation(LOGIN_USER);

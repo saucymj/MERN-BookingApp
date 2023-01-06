@@ -29,4 +29,19 @@
         "password": "password05",
         "blogs":
     },
+    {
+        "name": "Michle Grauy",
+        "email": "BestGrauy1912@gmail.com",
+        "password": "Franksbestman"
+    },
+    {
+        "name": "Sree Frank",
+        "email": "RanchD@gmail.com",
+        "password": "Ballerjuice1991"
+    },
+    {
+        "name": "Jake Roon",
+        "email": "Gogetem37@gmail.com",
+        "password": "SweetHams2000"
+    }
 }
