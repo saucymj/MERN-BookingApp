@@ -1,30 +1,30 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 
-import ReviewList from '../components/ReviewList';
-import ReviewForm from '../components/ReviewForm';
+import BlogList from '../components/BlogList';
+import BlogForm from '../components/BlogForm';
 import { Spinner } from '@chakra-ui/react';
 
-import { QUERY_REVIEWS } from '../utils/queries';
+import { QUERY_BLOGS } from '../utils/queries';
 
 
 const Home = () => {
-  const { loading, data } = useQuery(QUERY_REVIEWS);
-  const reviews = data?.reviews || [];
+  const { loading, data } = useQuery(QUERY_BLOGS);
+  const blogs = data?.blogs || [];
 
   return (
     <main>
       <div >
         <div
         >
-          <ReviewForm />
+          <BlogForm />
         </div>
         <div >
           {loading ? (
             <div><Spinner /></div>
           ) : (
-            <ReviewList
-              reviews={reviews}
+            <BlogList
+              blogs={blogs}
               title="Share Your Vacay..."
             />
           )}

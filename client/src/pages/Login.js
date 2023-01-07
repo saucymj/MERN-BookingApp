@@ -4,8 +4,8 @@ import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
-import { EmailIcon } from '@chakra-ui/icons';
-import { Input, Button ,FormControl, FormLabel, FormHelperText, InputLeftAddon, InputGroup } from '@chakra-ui/react';
+import { EmailIcon, LockIcon } from '@chakra-ui/icons';
+import { Input, Button ,FormControl, FormLabel, FormHelperText, InputLeftAddon, InputGroup, Flex, Box } from '@chakra-ui/react';
 
 const Login = (props) => {
     const [formState, setFormState] = useState({ email: '', password: '' });
@@ -41,7 +41,6 @@ const Login = (props) => {
 
     return (
         <div style={{ margin: '14px' }}>
-            <h2>Login</h2>
             {data ? (
                 <p>
                     Success! You may now head{' '}
@@ -49,7 +48,8 @@ const Login = (props) => {
                 </p>
             ) : (
                 <form onSubmit={handleFormSubmit}>
-                
+                <Flex justify='center'>
+                <Box width='50%' border='2px' borderRadius='2xl' borderColor='' p={6}>
                 <FormControl isRequired>
                     <FormLabel>Email</FormLabel>
                     <InputGroup>
@@ -57,17 +57,22 @@ const Login = (props) => {
                     <Input placeholder='Email' id='email' type='email' name='email' onChange={handleChange} value={formState.email} />
                     </InputGroup>
                     <FormLabel>Password</FormLabel>
+                    <InputGroup>
+                    <InputLeftAddon children={<LockIcon/>} />
                     <Input placeholder='Password'
                         id='password'
                         value={formState.password}
                         type='password'
                         name='password'
                         onChange={handleChange} />
-                    <FormHelperText>* is a required field</FormHelperText>
+                    </InputGroup>
+                    <FormHelperText color='red'>* is a required field</FormHelperText>
                     <div>
-                        <Button mt={8} type='submit' colorScheme='blue'>Submit</Button>
+                        <Button mt={8} type='submit' colorScheme='blue'>Login</Button>
                     </div>
                 </FormControl>
+                </Box>
+                </Flex>
                 </form>
 
             )}
