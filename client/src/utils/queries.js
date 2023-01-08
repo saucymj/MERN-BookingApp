@@ -10,23 +10,23 @@ export const QUERY_USER = gql`
   }
 `;
 
-export const QUERY_REVIEWS = gql`
-  query getReviews {
-    reviews {
+export const QUERY_BLOGS = gql`
+  query getBlogs {
+      blogs {
       _id
-      reviewText
-      reviewAuthor
+      blogText
+      blogAuthor
       createdAt
     }
   }
 `;
 
-export const QUERY_SINGLE_REVIEW = gql`
-  query getSingleReview($reviewId: ID!) {
-    review(reviewId: $reviewId) {
+export const QUERY_SINGLE_BLOG = gql`
+  query getSingleBlog($blogId: ID!) {
+    blog(blogId: $blogId) {
       _id
-      reviewText
-      reviewAuthor
+      blogText
+      blogAuthor
       createdAt
       comments {
         _id

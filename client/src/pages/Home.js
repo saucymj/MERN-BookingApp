@@ -1,32 +1,31 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 
-//import ReviewList from '../components/ReviewList';
-import ReviewForm from '../components/ReviewForm';
-import CommentForm from '../components/CommentForm'
+import BlogList from '../components/BlogList';
+import BlogForm from '../components/BlogForm';
+import { Spinner } from '@chakra-ui/react';
 
-import { QUERY_REVIEWS } from '../utils/queries';
+import { QUERY_BLOGS } from '../utils/queries';
+
 
 const Home = () => {
-  const { loading, data } = useQuery(QUERY_REVIEWS);
-  const reviews = data?.reviews || [];
+  const { loading, data } = useQuery(QUERY_BLOGS);
+  const blogs = data?.blogs || [];
 
   return (
     <main>
-      <div className="flex-row justify-center">
+      <div >
         <div
-          className="col-12 col-md-10 mb-3 p-3"
-          style={{ border: '1px dotted #1a1a1a' }}
         >
-          <CommentForm />
+          <BlogForm />
         </div>
-        <div className="col-12 col-md-8 mb-3">
+        <div >
           {loading ? (
-            <div>Loading...</div>
+            <div><Spinner /></div>
           ) : (
-            <ReviewForm
-              reviews={reviews}
-              title="Some Feed for Thought(s)..."
+            <BlogList
+              blogs={blogs}
+              title="Share Your Vacay..."
             />
           )}
         </div>

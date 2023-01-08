@@ -24,12 +24,12 @@ export const ADD_USER = gql`
   }
 `;
 
-export const ADD_REVIEW = gql`
-  mutation addReview($reviewText: String!, $reviewAuthor: String!) {
-    addReview(reviewText: $reviewText, reviewAuthor: $reviewAuthor) {
+export const ADD_BLOG = gql`
+  mutation addBlog($blogText: String!, $blogAuthor: String!) {
+    addBlog(blogText: $blogText, blogAuthor: $blogAuthor) {
       _id
-      reviewText
-      reviewAuthor
+      blogText
+      blogAuthor
       createdAt
       comments {
         _id
@@ -41,18 +41,18 @@ export const ADD_REVIEW = gql`
 
 export const ADD_COMMENT = gql`
   mutation addComment(
-    $reviewId: ID!
+    $blogId: ID!
     $commentText: String!
     $commentAuthor: String!
   ) {
     addComment(
-      reviewId: $reviewId
+      blogId: $blogId
       commentText: $commentText
       commentAuthor: $commentAuthor
     ) {
       _id
-      reviewText
-      reviewAuthor
+      blogText
+      blogAuthor
       createdAt
       comments {
         _id

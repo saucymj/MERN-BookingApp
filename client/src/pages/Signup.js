@@ -6,7 +6,8 @@ import { ADD_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
 import { Input, Button } from '@chakra-ui/react';
-import { FormControl, FormLabel, FormHelperText } from '@chakra-ui/react'
+import { FormControl, FormLabel, FormHelperText, Box, Flex, InputLeftAddon, InputGroup } from '@chakra-ui/react';
+import { LockIcon, EmailIcon } from '@chakra-ui/icons';
 
 const Signup = () => {
     const [formState, setFormState] = useState({
@@ -42,7 +43,6 @@ const Signup = () => {
 
     return (
         <div style={{ margin: '14px' }}>
-            <h2>Signup</h2>
             {data ? (
                 <p>
                     Success! You may now head{' '}
@@ -50,22 +50,32 @@ const Signup = () => {
                 </p>
             ) : (
                 <form onSubmit={handleFormSubmit}>
+                <Flex justify='center'>
+                <Box width='50%' border='2px' borderRadius='2xl' borderColor='' p={6}>
                 <FormControl isRequired>
                     <FormLabel>Username</FormLabel>
                     <Input id='usernamee' placeholder='Username' type='text'  name='username' onChange={handleChange} value={formState.username} />
                 </FormControl>
                 <FormControl isRequired>
                     <FormLabel>Email</FormLabel>
+                    <InputGroup>
+                    <InputLeftAddon children={<EmailIcon/>} />
                     <Input id='email' placeholder='Email' type='email' name='email' onChange={handleChange} value={formState.email} />
+                    </InputGroup>
                 </FormControl>
                 <FormControl isRequired>
                     <FormLabel>Password</FormLabel>
+                    <InputGroup>
+                    <InputLeftAddon children={<LockIcon/>} />
                     <Input id='password' placeholder='Password' value={formState.password} name='password' type='password' onChange={handleChange} />
-                    <FormHelperText>* is a required field</FormHelperText>
+                    </InputGroup>
+                    <FormHelperText color='red'>* is a required field</FormHelperText>
                     <div>
-                        <Button mt={8} type='submit' colorScheme='blue'>Submit</Button>
+                        <Button mt={8} type='submit' colorScheme='blue'>Signup</Button>
                     </div>
                 </FormControl>
+                </Box>
+                </Flex>
                 </form>
             )}
 

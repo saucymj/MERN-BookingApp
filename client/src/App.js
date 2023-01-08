@@ -4,9 +4,13 @@ import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ChakraProvider } from '@chakra-ui/react'
 
+import Header from './components/Header';
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
+import SingleReview from './pages/SingleReview';
+import Footer from './components/Footer';
+
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -32,7 +36,8 @@ function App() {
     <ChakraProvider>
     <ApolloProvider client={client}>
       <Router>
-        <div className="flex-column justify-flex-start min-100-vh">
+        <Header />
+        <div className="">
           <Routes>
               <Route 
                 path="/" 
@@ -46,9 +51,13 @@ function App() {
                 path="/signup" 
                 element={<Signup />} 
               />
-             
+             <Route 
+                path="/reviews/:reviewId" 
+                element={<SingleReview />} 
+              />
           </Routes>
            </div>
+           <Footer/>
       </Router>
     </ApolloProvider>
     </ChakraProvider>
