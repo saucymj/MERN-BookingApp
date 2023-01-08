@@ -1,9 +1,10 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Thought } = require('../models');
+const { User, Blog } = require('../models');
 const { signToken } = require('../utils/auth');
 const { User, Blog } = require('../models');
 
 const resolvers = {
+
   Query: {
     users: async () => {
       return await User.find({}).populate('blogs').populate({
@@ -19,3 +20,4 @@ module.exports = resolvers;
 const resolvers = {
     
 }
+
