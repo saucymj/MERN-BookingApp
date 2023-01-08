@@ -10,8 +10,8 @@ const typeDefs = gql`
   }
   type Review {
     _id: ID
-    reviewText: String
-    reviewAuthor: String
+    blogText: String
+    blogAuthor: String
     createdAt: String
     comments: [Comment]!
   }
