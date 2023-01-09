@@ -14,7 +14,7 @@ const resolvers = {
       const params = username ? { username } : {};
       return Blog.find(params).sort({ createdAt: -1 });
     },
-    Blog: async (parent, { blogID }) => {
+    blog: async (parent, { blogID }) => {
       return Blog.findOne({ _id: blogID });
     },
   },
