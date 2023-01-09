@@ -13,7 +13,7 @@ const BlogList = ({ blogs, title }) => {
             <h3>{title}</h3>
             {blogs &&
                 blogs.map((blog) => (
-                    <div key={blogs._id} className="">
+                    <div key={blog._id} className="">
                         <Card>
                             <CardHeader>
                                 <Heading size='md'>{blog.blogAuthour} <br /> Post Date: {' '}
