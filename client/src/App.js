@@ -3,6 +3,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@ap
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ChakraProvider } from '@chakra-ui/react'
+import './App.css';
 
 import Header from './components/Header';
 import Home from './pages/Home';
@@ -35,9 +36,10 @@ function App() {
   return (
     <ChakraProvider>
     <ApolloProvider client={client}>
+      <div className='page-container'></div>
       <Router>
         <Header />
-        <div className="">
+        <div className="content-wrap">
           <Routes>
               <Route 
                 path="/" 
@@ -56,9 +58,10 @@ function App() {
                 element={<SingleReview />} 
               />
           </Routes>
-           </div>
-           <Footer/>
+        </div>
+        <Footer/>
       </Router>
+
     </ApolloProvider>
     </ChakraProvider>
   );

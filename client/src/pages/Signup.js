@@ -71,7 +71,7 @@ const Signup = () => {
                     </InputGroup>
                     <FormHelperText color='red'>* is a required field</FormHelperText>
                     <div>
-                        <Button mt={8} type='submit' colorScheme='blue'>Signup</Button>
+                        <Button mt={8} type='submit' bgGradient="linear(to-r, purple.900, purple.300)" color="white">Signup</Button>
                     </div>
                 </FormControl>
                 </Box>

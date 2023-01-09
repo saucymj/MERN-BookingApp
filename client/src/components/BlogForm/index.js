@@ -6,7 +6,7 @@ import { ADD_BLOG } from '../../utils/mutations';
 import { QUERY_BLOGS } from '../../utils/queries';
 
 import Auth from '../../utils/auth';
-import { FormControl, Button, Textarea, Text } from '@chakra-ui/react';
+import { FormControl, Button, Textarea, Text , Heading} from '@chakra-ui/react';
 import { AddIcon } from '@chakra-ui/icons';
 
 const BlogForm = () => {
@@ -57,9 +57,11 @@ const BlogForm = () => {
 
   return (
     <div>
-      <h3>How was your trip?</h3>
+      <Heading as="h2" size="2xl" p="10">
+        How was your trip?
+      </Heading>
 
-      {Auth.loggedIn() ? (
+      {Auth.loggedIn() ? ( 
         <>
           <FormControl onSubmit={handleFormSubmit}>
             <Textarea value={blogText} placeholder='Share your experience...' onChange={handleChange} />
@@ -71,10 +73,10 @@ const BlogForm = () => {
             </FormControl>
         </>
       ) : (
-        <p style={{ fontSize:'27px' }}>
+        <Heading pl="10" as="h3" size="l">
           You need to be logged in to create a post. Please{' '}
-          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
-        </p>
+          <Link color='blue' to="/login" >login</Link> or <Link color="blue" to="/signup">signup.</Link>
+        </Heading>
       )}
     </div>
   );

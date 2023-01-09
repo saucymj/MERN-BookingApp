@@ -8,27 +8,27 @@ const Footer = () => {
   const location = useLocation();
   const navigate = useNavigate();
   return (
-    <Flex align="center" justify="center" p={3}>
+    <Flex flexDirection="column" minHeight="100%" align="center" justify="center" p={3}>
       <div className="">
         {location.pathname !== '/' && (
-        <Button ml={100}  onClick={() => navigate(-1)} leftIcon={<ArrowBackIcon />} colorScheme='teal' variant='solid'>
+        <Button ml={100}  onClick={() => navigate(-1)} leftIcon={<ArrowBackIcon />} bgGradient="linear(to-r, purple.900, purple.700 ,purple.300)" variant='solid' color="white" mb="3px">
            Previous
          </Button>
         )}
         <Spacer/>
-        <Box pt={7}>
-        <h4>
-          Made in{' '}
-          <span
-            className="emoji"
-            role="img"
-            aria-label="flag"
-            aria-hidden="false"
-          >
-            🇺🇸
-          </span>{' '}
-          by Mekhi, Kevin, Elizabeth, Ayoub, & Vegas.
-        </h4>
+        <Box w='100%' color="white" bgGradient="linear(to-r, purple.900, purple.700 ,purple.300)" mt="auto" pt={7}>
+          <h4>
+            Made in{' '}
+            <span
+              className="emoji"
+              role="img"
+              aria-label="flag"
+              aria-hidden="false"
+            >
+              🇺🇸
+            </span>{' '}
+            by Mekhi, Kevin, Elizabeth, Ayoub, & Vegas.
+          </h4>
         </Box>
       </div>
       </Flex>

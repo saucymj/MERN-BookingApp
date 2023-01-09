@@ -5,7 +5,7 @@ import { ChatIcon } from '@chakra-ui/icons';
 
 const BlogList = ({ blogs, title }) => {
     if (!blogs.length) {
-        return <h3>Oops No blogs</h3>;
+        return <Heading as='h2' size="l" pl="10" pt="5">Oops No Blogs</Heading>;
     }
 
     return (
