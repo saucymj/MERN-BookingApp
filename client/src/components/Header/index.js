@@ -16,11 +16,11 @@ const Header = () => {
                 <div>
                     <Link className="" to="/">
                         <Heading color="white" as='h1' size='2xl' pl="2">
-                            Trips for Travelers
+                            Twitter for Travelers
                         </Heading>
                     </Link>
                     <Heading color="white" as="h2" size="sm" pt="1" pl="8">
-                        Grasp knowledge of possible vacation spots
+                        Determine your next vacation spot.
                     </Heading>
                 </div>
                 </Box>
