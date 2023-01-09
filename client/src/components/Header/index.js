@@ -12,14 +12,16 @@ const Header = () => {
     return (
         <header className="">
             <Flex>
-            <Box bg='tomato' w='100%' p={4}>
+            <Box bgGradient="linear(to-r, purple.900, purple.700 ,purple.300)" w='100%' p={4}>
                 <div>
                     <Link className="" to="/">
-                        <Heading as='h2' size='2xl'>
+                        <Heading color="white" as='h1' size='2xl' pl="2">
                             Trips for Travelers
                         </Heading>
                     </Link>
-                    <p className="">Grasp knowledge of possible vacation spots.</p>
+                    <Heading color="white" as="h2" size="sm" pt="1" pl="8">
+                        Grasp knowledge of possible vacation spots
+                    </Heading>
                 </div>
                 </Box>
                 <Spacer />
@@ -32,14 +34,14 @@ const Header = () => {
                     ) : (
                         <>
                        
-                        <ButtonGroup gap='2' bg='tomato' w='100%' p={10} h='100%'>
+                        <ButtonGroup gap='2' bg='purple.300' w='100%' p={10} h='100%'>
                             <Link className="" to="/login">
-                                <Button colorScheme='teal' size='md'>
+                                <Button bg="white" size='lg'>
                                     Login
                                 </Button>
                             </Link>
                             <Link className="" to="/signup">
-                                <Button colorScheme='teal' size='md'>
+                                <Button bg="white" size='lg'>
                                     Signup
                                 </Button>
                             </Link>

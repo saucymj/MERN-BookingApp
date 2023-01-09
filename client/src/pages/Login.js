@@ -59,7 +59,8 @@ const Login = (props) => {
                     <FormLabel>Password</FormLabel>
                     <InputGroup>
                     <InputLeftAddon children={<LockIcon/>} />
-                    <Input placeholder='Password'
+                    <Input 
+                        placeholder='Password'
                         id='password'
                         value={formState.password}
                         type='password'
@@ -68,7 +69,7 @@ const Login = (props) => {
                     </InputGroup>
                     <FormHelperText color='red'>* is a required field</FormHelperText>
                     <div>
-                        <Button mt={8} type='submit' colorScheme='blue'>Login</Button>
+                        <Button mt={8} type='submit' bgGradient="linear(to-r, purple.900, purple.300)" color="white">Login</Button>
                     </div>
                 </FormControl>
                 </Box>
