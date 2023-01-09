@@ -1,41 +1,41 @@
 [
     {
-        "name": "Margaret Clithrow",
+        "username": "Margaret Clithrow",
         "email": "MClithrow@techfriends.dev",
         "password": "password01"
     },
     {
-        "name": "Pearl Devere",
+        "username": "Pearl Devere",
         "email": "PDevere@techfriends.dev",
         "password": "password02"
     },
     {
-        "name": "Mary Titcomb",
+        "username": "Mary Titcomb",
         "email": "MTitcomb@techfriends.dev",
         "password": "password03"
     },
     {
-        "name": "Margaret Brown",
+        "username": "Margaret Brown",
         "email": "MBrown@techfriends.dev",
         "password": "password04"
     },
     {
-        "name": "Margaret Cavendish",
+        "username": "Margaret Cavendish",
         "email": "MCavendish@techfriends.dev",
         "password": "password05"
     },
     {
-        "name": "Michle Grauy",
+        "username": "Michle Grauy",
         "email": "BestGrauy1912@gmail.com",
         "password": "Franksbestman"
     },
     {
-        "name": "Sree Frank",
+        "username": "Sree Frank",
         "email": "RanchD@gmail.com",
         "password": "Ballerjuice1991"
     },
     {
-        "name": "Jake Roon",
+        "username": "Jake Roon",
         "email": "Gogetem37@gmail.com",
         "password": "SweetHams2000"
     }
