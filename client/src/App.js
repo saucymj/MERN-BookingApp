@@ -8,7 +8,7 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
-import SingleReview from './pages/SingleReview';
+import SingleBlog from './pages/SingleBlog';
 import Footer from './components/Footer';
 
 
@@ -52,8 +52,8 @@ function App() {
                 element={<Signup />} 
               />
              <Route 
-                path="/reviews/:reviewId" 
-                element={<SingleReview />} 
+                path="/blogs/:blogId" 
+                element={<SingleBlog />} 
               />
           </Routes>
            </div>
