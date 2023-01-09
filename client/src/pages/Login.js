@@ -69,7 +69,24 @@ const Login = (props) => {
                     </InputGroup>
                     <FormHelperText color='red'>* is a required field</FormHelperText>
                     <div>
-                        <Button mt={8} type='submit' bgGradient="linear(to-r, purple.900, purple.300)" color="white">Login</Button>
+                        <Box
+                         as='button' 
+                         mt={8} 
+                         type='submit' 
+                         bgGradient="linear(to-r, purple.900, purple.300)" 
+                         color="white"
+                         width="150px"
+                         height="40px"
+                         borderRadius="5px"
+                         _hover={{
+                            bg:"purple.900"
+                         }}
+                         _active={{
+                            bgGradient:"linear(to-r, purple.700, purple.100)"
+                         }}
+                         >
+                            Login
+                        </Box>
                     </div>
                 </FormControl>
                 </Box>

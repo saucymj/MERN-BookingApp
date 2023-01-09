@@ -1,23 +1,40 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { ArrowBackIcon } from '@chakra-ui/icons';
-import { Button, Flex, Spacer, Box } from '@chakra-ui/react';
+import { Button, Box} from '@chakra-ui/react';
 
 
 const Footer = () => {
   const location = useLocation();
   const navigate = useNavigate();
   return (
-    <Flex flexDirection="column" minHeight="100%" align="center" justify="center" p={3}>
       <div className="">
         {location.pathname !== '/' && (
-        <Button ml={100}  onClick={() => navigate(-1)} leftIcon={<ArrowBackIcon />} bgGradient="linear(to-r, purple.900, purple.700 ,purple.300)" variant='solid' color="white" mb="3px">
-           Previous
-         </Button>
+
+      <Box as='button'
+          type = 'submit' 
+          mt={8} 
+          ml={100}
+          bgGradient="linear(to-r, purple.900, purple.300)" 
+          color="white"
+          width="150px"
+          height="40px"
+          borderRadius="5px"
+          _hover={{
+            bg:"purple.900"
+          }}
+          _active={{
+            bgGradient:"linear(to-r, purple.700, purple.100)"
+          }}
+          onClick={() => navigate(-1)} 
+          leftIcon={<ArrowBackIcon />} 
+          mb="3px"
+          >
+        Previous
+      </Box>
         )}
-        <Spacer/>
-        <Box w='100%' color="white" bgGradient="linear(to-r, purple.900, purple.700 ,purple.300)" mt="auto" pt={7}>
-          <h4>
+
+        <Box minH="100%" color="white" bgGradient="linear(to-r, purple.900, purple.700 ,purple.300)">
             Made in{' '}
             <span
               className="emoji"
@@ -28,10 +45,9 @@ const Footer = () => {
               🇺🇸
             </span>{' '}
             by Mekhi, Kevin, Elizabeth, Ayoub, & Vegas.
-          </h4>
         </Box>
+
       </div>
-      </Flex>
   );
 };
 

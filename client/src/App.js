@@ -2,7 +2,7 @@ import React from 'react';
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider, Container } from '@chakra-ui/react'
 import './App.css';
 
 import Header from './components/Header';
@@ -34,35 +34,33 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <ChakraProvider>
-    <ApolloProvider client={client}>
-      <div className='page-container'></div>
-      <Router>
-        <Header />
-        <div className="content-wrap">
-          <Routes>
+    <ChakraProvider resetCSS="true">
+    <Container maxW="100%" height="100%" p="0">
+      <ApolloProvider client={client}>
+        <Router>
+          <Header />
+            <Routes>
+                <Route 
+                  path="/" 
+                  element={<Home />} 
+                />
+                <Route 
+                  path="/login" 
+                  element={<Login />} 
+                />
+                <Route 
+                  path="/signup" 
+                  element={<Signup />} 
+                />
               <Route 
-                path="/" 
-                element={<Home />} 
-              />
-              <Route 
-                path="/login" 
-                element={<Login />} 
-              />
-              <Route 
-                path="/signup" 
-                element={<Signup />} 
-              />
-             <Route 
-                path="/blogs/:blogId" 
-                element={<SingleBlog />} 
-              />
-          </Routes>
-        </div>
-        <Footer/>
-      </Router>
-
-    </ApolloProvider>
+                  path="/blogs/:blogId" 
+                  element={<SingleBlog />} 
+                />
+            </Routes>
+          <Footer/>
+        </Router>
+      </ApolloProvider>
+    </Container>
     </ChakraProvider>
   );
 }
