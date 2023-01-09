@@ -57,6 +57,8 @@
 
   ## Links
   Github Repo - https://github.com/saucymj/MERN-BookingApp
+  Google SlideShow - https://docs.google.com/presentation/d/1L7l5-V2wbMw_zcRLAZC8jDBqaleemnMDmdds7dI9a3U/edit?usp=sharing
+  
   
   ## Contributors
   Mekhi Banks
