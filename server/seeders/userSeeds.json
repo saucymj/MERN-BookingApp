@@ -2,32 +2,27 @@
     {
         "name": "Margaret Clithrow",
         "email": "MClithrow@techfriends.dev",
-        "password": "password01",
-        "blogs":
+        "password": "password01"
     },
     {
         "name": "Pearl Devere",
         "email": "PDevere@techfriends.dev",
-        "password": "password02",
-        "blogs":
+        "password": "password02"
     },
     {
         "name": "Mary Titcomb",
         "email": "MTitcomb@techfriends.dev",
-        "password": "password03",
-        "blogs":
+        "password": "password03"
     },
     {
         "name": "Margaret Brown",
         "email": "MBrown@techfriends.dev",
-        "password": "password04",
-        "blogs":
+        "password": "password04"
     },
     {
         "name": "Margaret Cavendish",
         "email": "MCavendish@techfriends.dev",
-        "password": "password05",
-        "blogs":
+        "password": "password05"
     },
     {
         "name": "Michle Grauy",
