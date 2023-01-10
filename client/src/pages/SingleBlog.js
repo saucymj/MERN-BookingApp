@@ -8,16 +8,16 @@ import CommentForm from '../components/CommentForm';
 import { Card, CardHeader, CardBody, Spinner, Heading, Container } from '@chakra-ui/react'
 
 
-import { QUERY_SINGLE_REVIEW } from '../utils/queries';
+import { QUERY_SINGLE_BLOG } from '../utils/queries';
 
-const SingleReview = () => {
-    const { reviewId } = useParams();
+const SingleBlog = () => {
+    const { blogId } = useParams();
 
-    const { loading, data } = useQuery(QUERY_SINGLE_REVIEW, {
-        variables: { reviewId: reviewId },
+    const { loading, data } = useQuery(QUERY_SINGLE_BLOG, {
+        variables: { blogId: blogId },
     });
 
-    const review = data?.review || {};
+    const blog = data?.blog || {};
 
     if (loading) {
         return <Spinner />;
@@ -26,27 +26,27 @@ const SingleReview = () => {
         <div className="">
             <Card>
                 <CardHeader>
-                    <Heading size='md'>{review.reviewAuthour} <br /> Post Date: {' '}
+                    <Heading size='md'>{blog.blogAuthour} <br /> Post Date: {' '}
                         <span>
-                            {review.createdAt}
+                            {blog.createdAt}
                         </span></Heading>
                 </CardHeader>
 
                 <CardBody>
                     <Container>
-                        {review.reviewText}
+                        {blog.blogText}
                     </Container>
                 </CardBody>
             </Card>
 
             <div className="">
-                <CommentList comments={review.comments} />
+                <CommentList comments={blog.comments} />
             </div>
             <div className="" >
-                <CommentForm reviewId={review._id} />
+                <CommentForm blogId={blog._id} />
             </div>
         </div>
     );
 };
 
-export default SingleReview;
+export default SingleBlog;

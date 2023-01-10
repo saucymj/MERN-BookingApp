@@ -9,7 +9,7 @@ import { FormControl, Button, Textarea, Text } from '@chakra-ui/react';
 import { AddIcon } from '@chakra-ui/icons';
 
 
-const CommentForm = ({ reviewId }) => {
+const CommentForm = ({ blogId }) => {
     const [commentText, setCommentText] = useState('');
     const [characterCount, setCharacterCount] = useState(0);
 
@@ -21,7 +21,7 @@ const CommentForm = ({ reviewId }) => {
         try {
             const { data } = await addComment({
                 variables: {
-                    reviewId,
+                    blogId,
                     commentText,
                     commentAuthor: Auth.getProfile().data.username,
                 },

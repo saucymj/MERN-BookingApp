@@ -2,26 +2,26 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
-import { ADD_REVIEW } from '../../utils/mutations';
-import { QUERY_REVIEWS } from '../../utils/queries';
+import { ADD_BLOG } from '../../utils/mutations';
+import { QUERY_BLOGS } from '../../utils/queries';
 
 import Auth from '../../utils/auth';
-import { FormControl, Button, Textarea, Text } from '@chakra-ui/react';
+import { FormControl, Button, Textarea, Text , Heading} from '@chakra-ui/react';
 import { AddIcon } from '@chakra-ui/icons';
 
-const ReviewForm = () => {
-  const [reviewText, setReviewText] = useState('');
+const BlogForm = () => {
+  const [blogText, setBlogText] = useState('');
 
   const [characterCount, setCharacterCount] = useState(0);
 
-  const [addReview, { error }] = useMutation(ADD_REVIEW, {
-    update(cache, { data: { addReview } }) {
+  const [addBlog, { error }] = useMutation(ADD_BLOG, {
+    update(cache, { data: { addBlog } }) {
       try {
-        const { reviews } = cache.readQuery({ query: QUERY_REVIEWS });
+        const { blogs } = cache.readQuery({ query: QUERY_BLOGS });
 
         cache.writeQuery({
-          query: QUERY_REVIEWS,
-          data: { reviews: [addReview, ...reviews] },
+          query: QUERY_BLOGS,
+          data: { blogs: [addBlog, ...blogs] },
         });
       } catch (e) {
         console.error(e);
@@ -33,14 +33,14 @@ const ReviewForm = () => {
     event.preventDefault();
 
     try {
-      const { data } = await addReview({
+      const { data } = await addBlog({
         variables: {
-          reviewText,
-          reviewAuthor: Auth.getProfile().data.username,
+          blogText,
+          blogAuthor: Auth.getProfile().data.username,
         },
       });
 
-      setReviewText('');
+      setBlogText('');
     } catch (err) {
       console.error(err);
     }
@@ -49,20 +49,22 @@ const ReviewForm = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    if (name === 'reviewText' && value.length <= 280) {
-      setReviewText(value);
+    if (name === 'blogText' && value.length <= 280) {
+      setBlogText(value);
       setCharacterCount(value.length);
     }
   };
 
   return (
     <div>
-      <h3>How was your trip?</h3>
+      <Heading as="h2" size="2xl" p="10">
+        How was your trip?
+      </Heading>
 
-      {Auth.loggedIn() ? (
+      {Auth.loggedIn() ? ( 
         <>
           <FormControl onSubmit={handleFormSubmit}>
-            <Textarea value={reviewText} placeholder='Share your experience...' onChange={handleChange} />
+            <Textarea value={blogText} placeholder='Share your experience...' onChange={handleChange} />
             <Text mb='8px'> Character Count: {characterCount}/280 
             {error && <span className="">{error.message}</span>}</Text>
             <div>
@@ -71,13 +73,13 @@ const ReviewForm = () => {
             </FormControl>
         </>
       ) : (
-        <p>
+        <Heading pl="10" as="h3" size="l">
           You need to be logged in to create a post. Please{' '}
-          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
-        </p>
+          <Link color='blue' to="/login" >login</Link> or <Link color="blue" to="/signup">signup.</Link>
+        </Heading>
       )}
     </div>
   );
 };
 
-export default ReviewForm;
+export default BlogForm;
