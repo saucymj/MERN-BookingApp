@@ -42,15 +42,15 @@ const resolvers = {
 
       return { token, user };
     },
-    addBlog: async (parent, { BlogText, BlogAuthor }) => {
-      const Blog = await Blog.create({ BlogText, BlogAuthor });
+    addBlog: async (parent, { blogText, blogAuthor }) => {
+      const blog = await Blog.create({ blogText, blogAuthor });
 
       await User.findOneAndUpdate(
-        { username: BlogAuthor },
-        { $addToSet: { blogs: Blog._id } }
+        { username: blogAuthor },
+        { $addToSet: { blogs: blog._id } }
       );
 
-      return Blog;
+      return blog;
     },
     addComment: async (parent, { blogID, commentText, commentAuthor }) => {
       return Blog.findOneAndUpdate(
@@ -64,12 +64,12 @@ const resolvers = {
         }
       );
     },
-    removeBlog: async (parent, { blogID }) => {
-      return Blog.findOneAndDelete({ _id: blogID });
+    removeBlog: async (parent, { blogId }) => {
+      return Blog.findOneAndDelete({ _id: blogId });
     },
-    removeComment: async (parent, { blogID, commentId }) => {
+    removeComment: async (parent, { blogId, commentId }) => {
       return Blog.findOneAndUpdate(
-        { _id: blogID },
+        { _id: blogId },
         { $pull: { comments: { _id: commentId } } },
         { new: true }
       );

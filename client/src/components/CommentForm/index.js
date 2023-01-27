@@ -48,7 +48,7 @@ const CommentForm = ({ blogId }) => {
             {Auth.loggedIn() ? (
                 <>
                     <FormControl onSubmit={handleFormSubmit}>
-                        <Textarea value={commentText} placeholder='Leave a comment...' onChange={handleChange} />
+                        <Textarea name="commentText" value={commentText} placeholder='Leave a comment...' onChange={handleChange} />
                         <Text mb='8px'> Character Count: {characterCount}/280 
                         {error && <span className="">{error.message}</span>}</Text>
                         <div>

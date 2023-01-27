@@ -6,7 +6,7 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
-    blog: [Blog]!
+    blogs: [Blog]!
   }
   type Blog {
     _id: ID
@@ -29,7 +29,7 @@ const typeDefs = gql`
     users: [User]
     user(username: String!): User
     blogs(username: String): [Blog]
-    blog(BlogId: ID!): Blog
+    blog(blogId: ID!): Blog
   }
 
   type Mutation {

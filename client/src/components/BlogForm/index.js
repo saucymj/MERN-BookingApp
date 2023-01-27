@@ -63,20 +63,23 @@ const BlogForm = () => {
 
       {Auth.loggedIn() ? ( 
         <>
-          <FormControl onSubmit={handleFormSubmit}>
-            <Textarea value={blogText} placeholder='Share your experience...' onChange={handleChange} />
+        <form onSubmit={handleFormSubmit}>
+          <FormControl >
+            <Textarea name="blogText" value={blogText} placeholder='Share your experience...' onChange={handleChange} />
             <Text mb='8px'> Character Count: {characterCount}/280 
             {error && <span className="">{error.message}</span>}</Text>
             <div>
             <Button mt={8} colorScheme='blue' type='submit'><AddIcon /></Button>
             </div>
             </FormControl>
+          </form>
         </>
       ) : (
         <Heading pl="10" as="h3" size="l">
           You need to be logged in to create a post. Please{' '}
           <Link color='blue' to="/login" >login</Link> or <Link color="blue" to="/signup">signup.</Link>
         </Heading>
+
       )}
     </div>
   );
